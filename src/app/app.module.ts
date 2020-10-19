@@ -37,7 +37,6 @@ import { VeterinarioComponent } from './components/veterinario/veterinario.compo
     AppRoutingModule,
     FormsModule,
     AngularFireDatabaseModule,
-    AngularFireModule.initializeApp(environment.firebase),
     ToastrModule.forRoot()
   ],
   providers: [
