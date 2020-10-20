@@ -1,1 +1,132 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Login</title>
+</head>
+<body>
+    <div class="padre">
+        <div class="hijo">
+            <h1 class="titulos">FORMULARIOS DE SESIÓN</h1>
+            <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <a class="card-link texto" data-toggle="collapse" href="#collapseOne">
+                      Inicio de Sesión
+                    </a>
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                      </svg>
+                  </div>
+                  <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <div class="hijastro">
+                            <form>
+                                <div class="form-group">
+                                  <label class="texto" for="exampleInputEmail1">Correo Electronico</label>
+                                  <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                </div>
+                                <div class="form-group">
+                                  <label class="texto" for="exampleInputPassword1">Contraseña</label>
+                                  <input type="password" class="form-control" id="">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </form>
+                        </div>
+                        <div class="hijastra">
+                            <form>
+                                <div class="form-group">
+                                    <p class="texto">Tambien puedes ingresar con:</p>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary">Facebook</button>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-success">Google+</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link texto" data-toggle="collapse" href="#collapseTwo">
+                    Registrarse con nosotros!
+                  </a>
+                  <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-clipboard-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3zm4.354 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                  </div>
+                  <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" placeholder="Nombres">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" placeholder="Apellidos">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Correo Electronico">
+                            </div>
+                            <div class="form-group mb-2">
+                                <input class="form-control" type="text" placeholder="Dirección">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" placeholder="Teléfono">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input class="form-control" type="text" placeholder="Celular">
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block">Proceder al registo</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <a class="collapsed card-link texto" data-toggle="collapse" href="#collapseThree">
+                      Recuperar Contraseña
+                    </a>
+                    <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-question-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                      </svg>
+                  </div>
+                  <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                      <p class="texto">Lamentamos los inconvenientes, brindanos tu correo y con gusto te ayudaremos:</p>
+                      <form class="form-inline">
+                        <div class="form-group mb-2">
+                          <label for="staticEmail2" class="sr-only">Correo Electronico</label>
+                          <input type="text" readonly class="form-control-plaintext" id="" value="Correo Electronico:">
+                        </div>
+                        <div class="form-group mx-sm-3 mb-2">
+                          <label for="inputPassword2" class="sr-only"></label>
+                          <input type="password" class="form-control" id="" placeholder="">
+                        </div>
+                        <button type="button" class="btn btn-outline-warning">Recuperar</button>
+                      </form>
+                    </div>>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
