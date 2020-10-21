@@ -1,1 +1,29 @@
-<p>raza-lista works!</p>
+<p>RAZAS de mascotas</p>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">
+            Lista de Raza
+        </h6>
+        <table class="table table-sm table-hover">
+            <thead>
+                <td>ID</td>
+                <td>Nombre</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Raza of RazaLista">
+                    <td>{{Raza.idR}}</td>              
+                    <td>{{Raza.nombre}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(Raza)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(Raza.idR)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

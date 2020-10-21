@@ -57,6 +57,8 @@ export class ClienteComponent implements OnInit {
   ngOnInit() {
     this.clienteServicio.getClientes();
     this.reinicioForm();
+    this.cargarComboxPropi();
+    this.cargarComboxRaza();
   }
 
   // Recibe un formulario del tipo NgForm, lo envia a guardar o actualizar , invocando el servicio Firebase
