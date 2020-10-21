@@ -7,10 +7,12 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { environment } from '../environments/environment'; 
 import { AngularFireModule } from '@angular/fire'; 
 import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 
 
 // service 
 import { VeterinariaService } from './services/veterinaria.service';
+import {AuthService} from './services/auth.service';
 
 // Toastr, para notificaciones en angular 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
@@ -24,6 +26,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { VeterinarioComponent } from './components/veterinario/veterinario.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,8 @@ import { VeterinarioComponent } from './components/veterinario/veterinario.compo
     RegisterComponent,
     ForgotPasswordComponent,
     ClienteComponent,
-    VeterinarioComponent
+    VeterinarioComponent,
+    VerifyEmailComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +46,12 @@ import { VeterinarioComponent } from './components/veterinario/veterinario.compo
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ToastrModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireAuthModule
   ],
   providers: [
-    VeterinariaService
+    VeterinariaService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
