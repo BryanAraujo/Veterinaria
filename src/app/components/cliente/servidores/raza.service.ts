@@ -24,7 +24,7 @@ export class RazaService {
  insertarRaza(Raza: Raza) {
    // agregar un dato al final de la lista, como recibe un objeto del tipo Raza , puede acceder a sus propiedades
    this.RazaLista.push({
-     nombre: Raza.nombre,
+     nombre: Raza.nombre
    }).ref.child("Razas");
  }
 
@@ -32,7 +32,7 @@ export class RazaService {
  actulizarRaza(Raza: Raza) {
    // Utilizando el metodo update de firebase , se envia clave y los parametros que va actualizar 
    this.RazaLista.update(Raza.idR, {
-     nombre: Raza.nombre,
+     nombre: Raza.nombre
    });
  }
 

@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../modelos/cliente';
 import { NgForm } from '@angular/forms';
-
+//Modelos
+import { Cliente } from '../modelos/cliente';
+import { Raza } from '../modelos/raza';
+import { Propietario } from '../modelos/propietario';
 //  Service 
 import {  ClienteService } from '../servidores/cliente.service';
+import {  RazaService } from '../servidores/raza.service';
+import {  PropietarioService } from '../servidores/propietario.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
@@ -15,23 +19,43 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class ClienteComponent implements OnInit {
-  clienteLista2: Cliente[];
+  razaLista: Raza[];
+  propiLista: Propietario[];
   constructor(
     public clienteServicio: ClienteService,
+    public RazaServicio: RazaService,
+    public PropietarioServicio: PropietarioService,
     public toastr: ToastrService
   ) { }
 
+  cargarComboxRaza()
+  {
+    this.RazaServicio.getRazas()
+    .snapshotChanges().subscribe(item => {
+      this.razaLista = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["idR"] = element.key;
+        this.razaLista.push(x as Raza);
+      });
+    });
+  }
+  cargarComboxPropi()
+  {
+    this.PropietarioServicio.getPropietarios()
+    .snapshotChanges().subscribe(item => {
+      this.propiLista = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["idP"] = element.key;
+        this.propiLista.push(x as Propietario);
+      });
+    });
+  }
+  
 // Cuando se levanta la aplicacion, llama al metodo del servicio firebase para traer los productos
   ngOnInit() {
-    this.clienteServicio.getClientes()
-      .snapshotChanges().subscribe(item => {
-        this.clienteLista2 = [];
-        item.forEach(element => {
-          let x = element.payload.toJSON();
-          x["$key"] = element.key;
-          this.clienteLista2.push(x as Cliente);
-        });
-      });
+    this.clienteServicio.getClientes();
     this.reinicioForm();
   }
 

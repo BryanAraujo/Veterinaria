@@ -22,6 +22,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { VeterinarioComponent } from './components/veterinario/veterinario.component';
 import { ClienteListaComponent } from './components/cliente/cliente-lista/cliente-lista.component';
+import { RazaComponent } from './components/cliente/raza/raza.component';
+import { PropietarioComponent } from './components/cliente/propietario/propietario.component';
+import { PropietarioListaComponent } from './components/cliente/propietario-lista/propietario-lista.component';
+import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { ClienteListaComponent } from './components/cliente/cliente-lista/client
     ForgotPasswordComponent,
     ClienteComponent,
     VeterinarioComponent,
-    ClienteListaComponent
+    ClienteListaComponent,
+    RazaComponent,
+    PropietarioComponent,
+    PropietarioListaComponent,
+    RazaListaComponent
   ],
   imports: [
     BrowserModule,
