@@ -11,14 +11,13 @@ import {  PropietarioService } from '../servidores/propietario.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
-
 @Component({
-  selector: 'app-cliente',
-  templateUrl: './cliente.component.html',
-  styleUrls: ['./cliente.component.css']
+  selector: 'app-clientes',
+  templateUrl: './clientes.component.html',
+  styleUrls: ['./clientes.component.css']
 })
+export class ClientesComponent implements OnInit {
 
-export class ClienteComponent implements OnInit {
   razaLista: Raza[];
   propiLista: Propietario[];
   constructor(
@@ -64,7 +63,7 @@ export class ClienteComponent implements OnInit {
   // Recibe un formulario del tipo NgForm, lo envia a guardar o actualizar , invocando el servicio Firebase
   // lo termina limpiando resetForm
   onSubmit(clienteForm: NgForm) {
-    if (clienteForm.value.$key == null)
+    if (clienteForm.value.idC == null)
       this.clienteServicio.insertarCliente(clienteForm.value);
     else
       this.clienteServicio.actulizarCliente(clienteForm.value);
@@ -79,5 +78,6 @@ export class ClienteComponent implements OnInit {
       clienteForm.reset();
     this.clienteServicio.selectedCliente = new Cliente();
   }
+
 
 }

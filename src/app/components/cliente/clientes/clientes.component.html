@@ -1,0 +1,51 @@
+<p>Registro cliente</p>
+
+<div class="card mt-5">
+    <div class="card-body">
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'ClienteForm' -->
+        <form #ClienteForm="ngForm" (ngSubmit)="onSubmit(ClienteForm)">
+
+            <!-- TO UPDATE -->
+            <input type="hidden" name="idC" #idC="ngModel" [(ngModel)]="clienteServicio.selectedCliente.idC">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" #name="ngModel"
+                    [(ngModel)]="clienteServicio.selectedCliente.nombre" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="apellido" #category="ngModel"
+                    [(ngModel)]="clienteServicio.selectedCliente.apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+            
+                    <select class="form-control" name="raza"  [(ngModel)]="clienteServicio.selectedCliente.raza"required>
+                        <option value="" >Choose...</option>
+                        <option *ngFor="let raza of razaLista" value="{{raza.nombre}}" > {{raza.nombre}}</option>
+                      </select>
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control" name="edad" #location="ngModel"
+                    [(ngModel)]="clienteServicio.selectedCliente.edad" placeholder="Edad">
+            </div>
+            <div class="form-group">
+            
+                <select class="form-control" name="prop"  [(ngModel)]="clienteServicio.selectedCliente.prop"required="">
+                    <option value="">Choose...</option>
+                    <option *ngFor="let propi of propiLista" value="{{propi.nombre}}"> {{propi.nombre}}</option>
+                  </select>
+        </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar Cliente
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="reinicioForm(ClienteForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

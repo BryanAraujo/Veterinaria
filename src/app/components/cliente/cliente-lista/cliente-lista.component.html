@@ -1,1 +1,37 @@
-<p>cliente-lista works!</p>
+<p>Lista Clientes</p>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">
+            Lista de Clientes
+        </h6>
+        <table class="table table-sm table-hover">
+            <thead>
+                <td>ID</td>
+                <td>Nombre</td>
+                <td>Apellido</td>
+                <td>Raza</td>
+                <td>Edad</td>
+                <td>Propietario</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Cliente of ClienteLista">
+                    <td>{{Cliente.idC}}</td>              
+                    <td>{{Cliente.nombre}}</td>
+                    <td>{{Cliente.apellido}}</td>
+                    <td>{{Cliente.raza}}</td>
+                    <td>{{Cliente.edad}}</td>
+                    <td>{{Cliente.prop}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(Cliente)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(Cliente.idC)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

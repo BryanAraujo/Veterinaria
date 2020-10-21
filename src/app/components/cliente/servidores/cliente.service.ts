@@ -26,12 +26,13 @@ export class ClienteService {
   // crear un nuevo Cliente  , recibiendo un parametro de tipo Cliente
   insertarCliente(Cliente: Cliente) {
     // agregar un dato al final de la lista, como recibe un objeto del tipo Cliente , puede acceder a sus propiedades
+
     this.clienteLista.push({
       nombre: Cliente.nombre,
       apellido: Cliente.apellido,
       raza: Cliente.raza,
       edad:Cliente.edad,
-      propietario:Cliente.prop
+      prop:Cliente.prop
     }).ref.child("Clientes");
   }
 
@@ -42,7 +43,7 @@ export class ClienteService {
       nombre: Cliente.nombre,
       apellido: Cliente.apellido,
       raza: Cliente.raza,
-      edad:Cliente.apellido,
+      edad:Cliente.edad,
       propietario:Cliente.prop
     });
   }

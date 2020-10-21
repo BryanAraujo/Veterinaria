@@ -26,6 +26,7 @@ import { RazaComponent } from './components/cliente/raza/raza.component';
 import { PropietarioComponent } from './components/cliente/propietario/propietario.component';
 import { PropietarioListaComponent } from './components/cliente/propietario-lista/propietario-lista.component';
 import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.component';
+import { ClientesComponent } from './components/cliente/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.c
     RazaComponent,
     PropietarioComponent,
     PropietarioListaComponent,
-    RazaListaComponent
+    RazaListaComponent,
+    ClientesComponent
   ],
   imports: [
     BrowserModule,
