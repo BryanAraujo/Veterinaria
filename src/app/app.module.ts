@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 // firebase 
 import { environment } from '../environments/environment'; 
 import { AngularFireModule } from '@angular/fire'; 
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+
+
 // service 
 import { VeterinariaService } from './services/veterinaria.service';
 
@@ -36,8 +39,10 @@ import { VeterinarioComponent } from './components/veterinario/veterinario.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    AngularFireDatabaseModule,
-    ToastrModule.forRoot()
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    ToastrModule.forRoot(),
+    ReactiveFormsModule
   ],
   providers: [
     VeterinariaService

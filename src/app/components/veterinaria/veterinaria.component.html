@@ -25,16 +25,16 @@
                             <a class="nav-link principal" href="#" id="PaginaPrincipal">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link principal" href="#" id="PaginaAcercaDe">Acerca De</a>
+                            <a class="nav-link principal" href="#Acercade" id="PaginaAcercaDe">Acerca De</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link principal" href="#" id="PaginaServicios">Servicios</a>
+                            <a class="nav-link principal" href="#servicios" id="PaginaServicios">Servicios</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link principal" href="#" id="PaginaDepartamentos">Departamentos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link principal" href="#" id="PaginaContacto">Contacto</a>
+                            <a class="nav-link principal" href="#contacts" id="PaginaContacto">Contacto</a>
                         </li>
                     </ul>
                     <form class="form-inline">
@@ -76,6 +76,7 @@
             </div>
         </div> <!-- Fin de Carrousel -->
         <!-- Sección Acerda De -->
+        <a name="Acercade" id="Acercade"></a> 
         <br><hr><br>
         <div class="row">
             <div class="col-12">
@@ -114,6 +115,7 @@
             </div>
         </div> <!-- Fin Sección Acerda De -->
         <!-- Sección Servicios -->
+        <a name="servicios" id="servicios"></a> 
         <br><hr><br>
         <div class="row">
             <div class="col-12">
@@ -195,9 +197,10 @@
         </div> <!-- Fin Sección Servicios -->
         <!-- Sección Contactanos -->
         <br><hr><br>
+        <h1 class="titulos">Contáctanos</h1>
         <div class="row">
             <div class="col-12">
-                <h1 class="titulos">Contáctanos</h1>
+                <a name="contacts" id="contacts"></a> 
             </div>
             <div class="col-6">
                 <br><br>
@@ -228,24 +231,24 @@
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="form-container col-6">
                 <h3 class="formulario">Escribenos!</h3>
-                <form>
+                <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()" >
                     <div class="form-row">
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Ingrese su Nombre y Apellido">
+                        <input type="text" class="form-control" formControlName="nombre" placeholder="Ingrese su Nombre y Apellido">
                       </div>
                       <div class="form-group col-md-6">
-                        <input type="text" class="form-control" placeholder="Ingrese su Correo Electronico">
+                        <input type="text" class="form-control" formControlName="email" placeholder="Ingrese su Correo Electronico">
                       </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Digite el Asunto">
+                        <input type="text" class="form-control" formControlName="asunto" placeholder="Digite el Asunto">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control" rows="3" placeholder="Escriba su mensaje"></textarea>
+                        <textarea class="form-control" formControlName="mensaje" rows="3" placeholder="Escriba su mensaje"></textarea>
                     </div>
-                    <button type="button" class="btn btn-outline-info">Enviar Mensaje</button>
+                    <button type="submit" class="btn btn-outline-info">Enviar Mensaje</button>
                 </form>
             </div>
         </div>

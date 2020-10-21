@@ -126,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "veterinaria"
+    }
+  },
+  "defaultProject": "veterinaria",
+  "cli": {
+    "analytics": false
+  }
 }
