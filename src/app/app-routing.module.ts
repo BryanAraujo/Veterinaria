@@ -12,7 +12,7 @@ import {AuthGuard} from '../app/shared/guards/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '../app/components/cliente/clientes/clientes.component', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'cliente', component: ClientesComponent },
