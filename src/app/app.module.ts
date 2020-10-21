@@ -4,19 +4,10 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
 // firebase 
-<<<<<<< HEAD
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-=======
-import { environment } from '../environments/environment'; 
-import { AngularFireModule } from '@angular/fire'; 
-import {AngularFirestoreModule} from '@angular/fire/firestore';
-import {AngularFireAuthModule} from '@angular/fire/auth';
 
-
->>>>>>> 9a3cdc04eea54cdef046fdc171de03547dd14ca8
-// service 
 import { VeterinariaService } from './services/veterinaria.service';
 import {AuthService} from './services/auth.service';
 
@@ -32,16 +23,17 @@ import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { VeterinarioComponent } from './components/veterinario/veterinario.component';
-<<<<<<< HEAD
+
 import { ClienteListaComponent } from './components/cliente/cliente-lista/cliente-lista.component';
 import { RazaComponent } from './components/cliente/raza/raza.component';
 import { PropietarioComponent } from './components/cliente/propietario/propietario.component';
 import { PropietarioListaComponent } from './components/cliente/propietario-lista/propietario-lista.component';
 import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.component';
 import { ClientesComponent } from './components/cliente/clientes/clientes.component';
-=======
+
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
->>>>>>> 9a3cdc04eea54cdef046fdc171de03547dd14ca8
+import { AngularFireAuthModule } from "@angular/fire/auth";
+ import { AngularFirestoreModule } from '@angular/fire/firestore'; 
 
 @NgModule({
   declarations: [
@@ -52,33 +44,25 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     ForgotPasswordComponent,
     ClienteComponent,
     VeterinarioComponent,
-<<<<<<< HEAD
     ClienteListaComponent,
     RazaComponent,
     PropietarioComponent,
     PropietarioListaComponent,
     RazaListaComponent,
-    ClientesComponent
-=======
+    ClientesComponent,
     VerifyEmailComponent
->>>>>>> 9a3cdc04eea54cdef046fdc171de03547dd14ca8
+
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     FormsModule,
-<<<<<<< HEAD
     AngularFireDatabaseModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
-=======
-    AngularFirestoreModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    ToastrModule.forRoot(),
-    ReactiveFormsModule,
-    AngularFireAuthModule
->>>>>>> 9a3cdc04eea54cdef046fdc171de03547dd14ca8
+    BrowserAnimationsModule,
+    AngularFireAuthModule,    
+     AngularFirestoreModule
   ],
           
   providers: [
