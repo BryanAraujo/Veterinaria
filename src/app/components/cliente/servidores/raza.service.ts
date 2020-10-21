@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { Raza } from '../modelos/raza';
 // Firebase
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
-// toastr
-import { ToastrService } from 'ngx-toastr';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +14,7 @@ export class RazaService {
  // Una variable temporal, para guardar los datos seleccionados, del tipo Raza
  selectedRaza: Raza = new Raza();
 
- constructor(private firebase: AngularFireDatabase,  private toastr: ToastrService) { }
+ constructor(private firebase: AngularFireDatabase) { }
 
  // Traer todos los Razas desde firebase 
  getRazas() { // guarda los elementos en la varible 'Razas'

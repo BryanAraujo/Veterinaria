@@ -1,1 +1,42 @@
-<p>propietario works!</p>
+<div class="card mt-5">
+    <div class="card-body">
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'PropietarioForm' -->
+        <form #PropietarioForm="ngForm" (ngSubmit)="onSubmit(PropietarioForm)">
+
+            <!-- TO UPDATE -->
+            <input type="hidden" name="idP" #idP="ngModel" [(ngModel)]="PropietarioService.selectedPropietario.idP">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" #name="ngModel"
+                    [(ngModel)]="PropietarioService.selectedPropietario.nombre" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="apellido" #category="ngModel"
+                    [(ngModel)]="PropietarioService.selectedPropietario.apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="dui" #category="ngModel"
+                    [(ngModel)]="PropietarioService.selectedPropietario.dui" placeholder="Dui">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" name="tel" #location="ngModel"
+                    [(ngModel)]="PropietarioService.selectedPropietario.tel" placeholder="Telefono">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="correo" #category="ngModel"
+                    [(ngModel)]="PropietarioService.selectedPropietario.correo" placeholder="Correo">
+            </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar Propietario
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(PropietarioForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

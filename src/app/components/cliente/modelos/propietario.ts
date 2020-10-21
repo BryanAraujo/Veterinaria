@@ -4,5 +4,5 @@ export class Propietario {
     apellido:string;
     dui:string;
     tel:string;
-    email:string;
+    correo:string;
 }

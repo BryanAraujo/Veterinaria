@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Propietario } from '../modelos/propietario';
 // Firebase
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -26,9 +27,9 @@ export class PropietarioService {
       nombre: Propietario.nombre,
       apellido:Propietario.apellido,
       dui:Propietario.dui,
-      telefono:Propietario.tel,
-      email: Propietario.email
-    }).ref.child("Propietarios");
+      tel:Propietario.tel,
+      correo: Propietario.correo
+    }).ref.child("Propietarios")
   }
  
   // Actualiza un Propietario, recibiendo un parametro de tipo Propietario
@@ -38,8 +39,8 @@ export class PropietarioService {
       nombre: Propietario.nombre,
       apellido:Propietario.apellido,
       dui:Propietario.dui,
-      telefono:Propietario.tel,
-      email: Propietario.email
+      tel:Propietario.tel,
+      correo: Propietario.correo
     });
   }
  
