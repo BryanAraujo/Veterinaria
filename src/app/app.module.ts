@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 // firebase 
-import { environment } from '../environments/environment'; 
-import { AngularFireModule } from '@angular/fire'; 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 // service 
 import { VeterinariaService } from './services/veterinaria.service';
@@ -21,6 +21,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { VeterinarioComponent } from './components/veterinario/veterinario.component';
+import { ClienteListaComponent } from './components/cliente/cliente-lista/cliente-lista.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +31,19 @@ import { VeterinarioComponent } from './components/veterinario/veterinario.compo
     RegisterComponent,
     ForgotPasswordComponent,
     ClienteComponent,
-    VeterinarioComponent
+    VeterinarioComponent,
+    ClienteListaComponent
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     FormsModule,
     AngularFireDatabaseModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
+          
   providers: [
     VeterinariaService
   ],
