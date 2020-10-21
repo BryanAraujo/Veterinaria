@@ -1,1 +1,51 @@
-<p>cliente works!</p>
+<p>Registro cliente</p>
+
+<div class="card mt-5">
+    <div class="card-body">
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'productForm' -->
+        <form #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
+
+            <!-- TO UPDATE -->
+            <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="clienteServicio.clienteLista.$key">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" #name="ngModel"
+                    [(ngModel)]="clienteServicio.clienteLista.nombre" placeholder="Nombre">
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="apellido" #category="ngModel"
+                    [(ngModel)]="clienteServicio.clienteLista.apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="raza" #name="ngModel"
+                    [(ngModel)]="clienteServicio.clienteLista.name" placeholder="Nombre">
+                    <select class="custom-select d-block w-100" id="raza"  [(ngModel)]="clienteServicio.clienteLista.raza"required="">
+                        <option value="">Choose...</option>
+                        <option *ngFor="let raza of clientesLista2" > {{raza.raza}}</option>
+                      </select>
+            </div>
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="lastname" #category="ngModel"
+                    [(ngModel)]="clienteServicio.clienteLista.lastname" placeholder="Apellido">
+            </div>
+
+            <div class="form-group">
+                <input type="number" class="form-control" name="age" #location="ngModel"
+                    [(ngModel)]="clienteServicio.clienteLista.age" placeholder="Edad">
+            </div>
+            
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar Estudiante
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

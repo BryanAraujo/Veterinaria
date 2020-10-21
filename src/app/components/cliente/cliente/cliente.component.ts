@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../modelo/cliente';
+import { Cliente } from '../modelos/cliente';
 import { NgForm } from '@angular/forms';
 
 //  Service 
-import {  ClienteService } from '../servidor/cliente.service';
+import {  ClienteService } from '../servidores/cliente.service';
 
 // toastr
 import { ToastrService } from 'ngx-toastr';
@@ -13,8 +13,9 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './cliente.component.html',
   styleUrls: ['./cliente.component.css']
 })
-export class ClienteComponent implements OnInit {
 
+export class ClienteComponent implements OnInit {
+  clienteLista2: Cliente[];
   constructor(
     public clienteServicio: ClienteService,
     public toastr: ToastrService
@@ -22,7 +23,15 @@ export class ClienteComponent implements OnInit {
 
 // Cuando se levanta la aplicacion, llama al metodo del servicio firebase para traer los productos
   ngOnInit() {
-    this.clienteServicio.getClientes();
+    this.clienteServicio.getClientes()
+      .snapshotChanges().subscribe(item => {
+        this.clienteLista2 = [];
+        item.forEach(element => {
+          let x = element.payload.toJSON();
+          x["$key"] = element.key;
+          this.clienteLista2.push(x as Cliente);
+        });
+      });
     this.reinicioForm();
   }
 
