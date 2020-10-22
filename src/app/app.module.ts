@@ -38,6 +38,7 @@ import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.c
 import { ClientesComponent } from './components/cliente/clientes/clientes.component';
 
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
     BrowserAnimationsModule,
     AngularFirestoreModule,
     ReactiveFormsModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    FontAwesomeModule
   ],
           
   providers: [
