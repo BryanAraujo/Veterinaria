@@ -39,6 +39,10 @@ import { ClientesComponent } from './components/cliente/clientes/clientes.compon
 
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductosComponent } from './components/productos/productos.component';
+import { ProductosListaComponent } from './components/productos/productos-lista/productos-lista.component';
+import { ProductoComponent } from './components/productos/producto/producto.component';
+import { ProveedoresComponent } from './components/productos/proveedores/proveedores.component';
 
 
 @NgModule({
@@ -56,7 +60,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     PropietarioListaComponent,
     RazaListaComponent,
     ClientesComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ProductosComponent,
+    ProductosListaComponent,
+    ProductoComponent,
+    ProveedoresComponent
 
   ],
   imports: [
