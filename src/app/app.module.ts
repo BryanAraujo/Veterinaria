@@ -46,6 +46,8 @@ import { ProveedoresComponent } from './components/productos/proveedores/proveed
 import { ProveedoresListaComponent } from './components/productos/proveedores-lista/proveedores-lista.component';
 import { ComprasComponent } from './components/compras/compras.component';
 import { CitasComponent } from './components/citas/citas.component';
+import { CitasListasComponent } from './components/citas/citas-listas/citas-listas.component';
+import { CitaComponent } from './components/citas/cita/cita.component';
 
 
 @NgModule({
@@ -70,7 +72,9 @@ import { CitasComponent } from './components/citas/citas.component';
     ProveedoresComponent,
     ProveedoresListaComponent,
     ComprasComponent,
-    CitasComponent
+    CitasComponent,
+    CitasListasComponent,
+    CitaComponent
 
   ],
   imports: [

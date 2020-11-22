@@ -1,0 +1,45 @@
+<p>Registro Citas</p>
+
+<div class="card mt-5">
+    <div class="card-body">
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'CitasForm' -->
+        <form #CitasForm="ngForm" (ngSubmit)="onSubmit(CitasForm)">
+
+            <!-- TO UPDATE -->
+            <input type="hidden" name="idCi" #idC="ngModel" [(ngModel)]="CitasServicio.selectedCitas.idCi">
+
+            <div class="form-group">
+            
+                <select class="form-control" name="paciente"  [(ngModel)]="CitasServicio.selectedCitas.paciente"required>
+                    <option value="">Seleccione</option>
+                    <option *ngFor="let cliente of clienteLista" value="{{cliente.nombre}}" > {{cliente.nombre}}</option>
+                  </select>
+        </div>
+        
+        <div class="form-group">
+            <input type="date" class="form-control" name="fechaCita" #location="ngModel"  
+                [(ngModel)]="CitasServicio.selectedCitas.fechaCita" placeholder="Fecha Cita">
+        </div>
+        <div class="form-group">
+            <input type="time" class="form-control" name="hora" #location="ngModel"
+                [(ngModel)]="CitasServicio.selectedCitas.hora" placeholder="Hora">
+        </div>
+        <div class="form-group">
+            <input   type="number" class="form-control" name="valor" #location="ngModel"
+                [(ngModel)]="CitasServicio.selectedCitas.valor" placeholder="Valor" min="0" step="0.01"  >
+              
+        </div>
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar Citas
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="reinicioForm(CitasForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
