@@ -21,7 +21,7 @@
             <div class="form-group">
             
                     <select class="form-control" name="raza"  [(ngModel)]="clienteServicio.selectedCliente.raza"required>
-                        <option value="" >Choose...</option>
+                        <option value="">Seleccione</option>
                         <option *ngFor="let raza of razaLista" value="{{raza.nombre}}" > {{raza.nombre}}</option>
                       </select>
             </div>
@@ -33,7 +33,7 @@
             <div class="form-group">
             
                 <select class="form-control" name="prop"  [(ngModel)]="clienteServicio.selectedCliente.prop"required="">
-                    <option value="">Choose...</option>
+                    <option selected="true" value="">Seleccione</option>
                     <option *ngFor="let propi of propiLista" value="{{propi.nombre}}"> {{propi.nombre}}</option>
                   </select>
         </div>

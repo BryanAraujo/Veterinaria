@@ -1,1 +1,115 @@
-<app-login></app-login>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <title>Modulo Clientes</title>
+</head>
+<app-productos-lista></app-productos-lista>
+<body>
+    <!-- Creación del Navbar Modulo Administrador -->
+     <!---->
+   <div class="container-fluid">
+       <div class="row">
+           <!-- Navbar y Logo -->
+           <nav class="navbar navbar-light bg-light todo">
+               <a class="navbar-brand">
+                   <img src="https://cdn.icon-icons.com/icons2/1950/PNG/512/free-30-instagram-stories-icons68_122615.png" width="60" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+               </a>
+               <h1 class="logo-nombre">VETERINARIA</h1>
+               <form class="form-inline">
+               <button class="btn btn-dark my-2 my-sm-0" type="submit">Cerrar Sesión</button>
+               </form>
+         </nav>
+       </div><!-- FIN DE NAVBAR-->
+       <!-- INICIO DE CUERPO -->
+       <div class="row">
+           <div class="col-2 fondo-paneles borde-side">
+               <!-- Inicia SideBar -->
+               <div class="row centrado">
+                   <img class="img-logo" src="https://cdn.icon-icons.com/icons2/624/PNG/512/User_Group-80_icon-icons.com_57247.png">
+                   <label class="texto">Nombre: Bryan Araujo</label>
+                   <label class="texto">Tipo Usuario: Administrador</label>
+               </div>
+               <div class="row">
+                   <div class="list-group todo">
+                       <a href="#" class="list-group-item list-group-item-action active">
+                           <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" style="float: left;" class="bi bi-house-door" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M7.646 1.146a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 .146.354v7a.5.5 0 0 1-.5.5H9.5a.5.5 0 0 1-.5-.5v-4H7v4a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .146-.354l6-6zM2.5 7.707V14H6v-4a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v4h3.5V7.707L8 2.207l-5.5 5.5z"/>
+                               <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Inicio</label>
+                       </a>
+                       <a href="#" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" style="float: left" class="bi bi-person-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                               <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                               <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Usuario</label>
+                       </a>                        
+                       <a href="#" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" style="float: left" class="bi bi-person-badge" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 0 1 4.5 0h7A2.5 2.5 0 0 1 14 2.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2.5zM4.5 1A1.5 1.5 0 0 0 3 2.5v10.795a4.2 4.2 0 0 1 .776-.492C4.608 12.387 5.937 12 8 12s3.392.387 4.224.803a4.2 4.2 0 0 1 .776.492V2.5A1.5 1.5 0 0 0 11.5 1h-7z"/>
+                               <path fill-rule="evenodd" d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Veterinarios</label>
+                       </a>
+                       <a href="#" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" style="float: left" viewBox="0 0 16 16" class="bi bi-box-seam" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Productos</label>
+                       </a>
+                       <a href="login" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" style="float: left" viewBox="0 0 16 16" class="bi bi-truck" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Proveedores</label>
+                       </a>
+                       <a href="#" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" style="float: left" class="bi bi-receipt-cutoff" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v13h-1V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51L2 2.118V15H1V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zM0 15.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+                               <path fill-rule="evenodd" d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-8a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+                           </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Medicamentos</label>
+                       </a>
+                       <a href="components/cliente/raza" class="list-group-item list-group-item-action">
+                           <svg width="1.5em" height="1.5em" style="float: left" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                               <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                             </svg>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Clientes</label>
+                       </a>
+                       <a class="nav-link" routerLink="/Clientes" [routerLinkActive]="'active'">
+                           <fa-icon [icon]="faDog" style="float: left;"></fa-icon>
+                           <label style="float: left; padding-left: 0.5rem; font-size:1rem">Animales</label>
+                       </a>
+                       <!-- <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a> -->
+                   </div>
+               </div>
+               <!-- Termina SideBar-->
+           </div>
+           <nav class="navbar navbar-expand-lg navbar-light bg-light">
+               <a class="navbar-brand" routerLink="">Mi App</a>
+               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                 <ul class="navbar-nav mr-auto">
+                   <li class="nav-item">
+                     <a class="nav-link" routerLink="/Clientes" [routerLinkActive]="'active'">Usuarios</a>
+                   </li>
+                
+                 </ul>
+               </div>
+             </nav>
+       </div>
+   </div>
+   <div class="row">
+       <div class="col-12">
+           <h1 class="pie">Veterinaria © Todos los derechos reservados. 2020</h1>
+       </div>
+   </div>
+</body>
+</html>
+

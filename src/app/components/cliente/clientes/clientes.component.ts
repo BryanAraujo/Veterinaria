@@ -62,14 +62,20 @@ export class ClientesComponent implements OnInit {
 
   // Recibe un formulario del tipo NgForm, lo envia a guardar o actualizar , invocando el servicio Firebase
   // lo termina limpiando resetForm
+  texto:String;
   onSubmit(clienteForm: NgForm) {
     if (clienteForm.value.idC == null)
-      this.clienteServicio.insertarCliente(clienteForm.value);
+    {  
+    this.clienteServicio.insertarCliente(clienteForm.value);
+    this.texto="Cliente Guardado";  
+    }
     else
+    {
       this.clienteServicio.actulizarCliente(clienteForm.value);
-
+      this.texto="Cliente Actulizado";  
+    }
     this.reinicioForm(clienteForm);
-    this.toastr.success('Operación Exitosa', 'Cliente registrado o actulizado');
+    this.toastr.success('Operación Exitosa', this.texto+"");
   }
 
   // Para limpiar el formulario

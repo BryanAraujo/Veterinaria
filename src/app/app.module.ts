@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
 // firebase 
+
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+
+
+// service 
 import { VeterinariaService } from './services/veterinaria.service';
 import {AuthService} from './services/auth.service';
 
@@ -32,8 +38,17 @@ import { RazaListaComponent } from './components/cliente/raza-lista/raza-lista.c
 import { ClientesComponent } from './components/cliente/clientes/clientes.component';
 
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { AngularFireAuthModule } from "@angular/fire/auth";
- import { AngularFirestoreModule } from '@angular/fire/firestore'; 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ProductosComponent } from './components/productos/productos.component';
+import { ProductosListaComponent } from './components/productos/productos-lista/productos-lista.component';
+import { ProductoComponent } from './components/productos/producto/producto.component';
+import { ProveedoresComponent } from './components/productos/proveedores/proveedores.component';
+import { ProveedoresListaComponent } from './components/productos/proveedores-lista/proveedores-lista.component';
+import { ComprasComponent } from './components/compras/compras.component';
+import { CitasComponent } from './components/citas/citas.component';
+import { CitasListasComponent } from './components/citas/citas-listas/citas-listas.component';
+import { CitaComponent } from './components/citas/cita/cita.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +65,16 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     PropietarioListaComponent,
     RazaListaComponent,
     ClientesComponent,
-    VerifyEmailComponent
+    VerifyEmailComponent,
+    ProductosComponent,
+    ProductosListaComponent,
+    ProductoComponent,
+    ProveedoresComponent,
+    ProveedoresListaComponent,
+    ComprasComponent,
+    CitasComponent,
+    CitasListasComponent,
+    CitaComponent
 
   ],
   imports: [
@@ -61,8 +85,10 @@ import { AngularFireAuthModule } from "@angular/fire/auth";
     AngularFireDatabaseModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    AngularFireAuthModule,    
-     AngularFirestoreModule
+    AngularFirestoreModule,
+    ReactiveFormsModule,
+    AngularFireAuthModule,
+    FontAwesomeModule
   ],
           
   providers: [

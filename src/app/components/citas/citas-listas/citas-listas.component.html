@@ -1,0 +1,35 @@
+<p>Lista Citas</p>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">
+            Lista de Citas
+        </h6>
+        <table class="table table-sm table-hover">
+            <thead>
+                <td>ID</td>
+                <td>Paciente</td> 
+                <td>Fecha</td>
+                <td>Hora</td>
+                <td>Valor</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Citas of CitasLista">
+                    <td>{{Citas.idCi}}</td>              
+                    <td>{{Citas.paciente}}</td>
+                    <td>{{Citas.fechaCita | date:'dd'}}/{{Citas.fechaCita | date:'MM'}}/{{Citas.fechaCita | date:'yyyy'}}</td>
+                    <td>{{Citas.hora}}</td>
+                    <td>{{Citas.valor}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(Citas)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(Citas.idCi)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

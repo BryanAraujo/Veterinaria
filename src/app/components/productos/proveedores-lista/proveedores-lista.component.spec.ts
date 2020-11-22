@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ProveedoresListaComponent } from './proveedores-lista.component';
+
+describe('ProveedoresListaComponent', () => {
+  let component: ProveedoresListaComponent;
+  let fixture: ComponentFixture<ProveedoresListaComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ ProveedoresListaComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ProveedoresListaComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
