@@ -2,7 +2,7 @@ export class Citas {
     idCi:string;
     paciente:string;
     fechaCita:Date;
-    hora:Date;
+    hora:string;
     valor:number;
 }
 
