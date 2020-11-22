@@ -16,7 +16,7 @@ export class ClienteListaComponent implements OnInit {
 
  // Arreglo para almacenar la informacion que se obtenga de la base de datos de firebase
  ClienteLista: Cliente[];
-
+ buscar:string;
  constructor(
    private ClienteService: ClienteService,
    private toastr: ToastrService
@@ -38,16 +38,42 @@ export class ClienteListaComponent implements OnInit {
     Cuando ya se tiene el elemento se asigna a mi arreglo 'ClienteList' para ser mostrado en mi pantalla list
     this.ClienteList.push(x as Cliente);
  */
+consulClie(){
+    
+
+  this.ClienteService.getClientes()
+    .snapshotChanges().subscribe(item => {
+      this.ClienteLista = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.ClienteLista.push(x as Cliente);
+      });
+
+      this.ClienteLista = this.ClienteLista.filter(data => {
+        return data.prop.toString().trim() === this.buscar;
+      })
+
+      if(this.ClienteLista.length === 0){
+        this.toastr.warning('Registro no encontrado', 'Advertencia');
+        this.mostrarRegistro();
+      }
+    });
+}
  ngOnInit() {
-   return this.ClienteService.getClientes()
-     .snapshotChanges().subscribe(item => {
-       this.ClienteLista = [];
-       item.forEach(element => {
-         let x = element.payload.toJSON();
-         x["idC"] = element.key;
-         this.ClienteLista.push(x as Cliente);
-       });
-     });
+  this.mostrarRegistro();
+ }
+ mostrarRegistro()
+ {
+  return this.ClienteService.getClientes()
+  .snapshotChanges().subscribe(item => {
+    this.ClienteLista = [];
+    item.forEach(element => {
+      let x = element.payload.toJSON();
+      x["idC"] = element.key;
+      this.ClienteLista.push(x as Cliente);
+    });
+  });
  }
 
  /* 

@@ -16,7 +16,7 @@ export class ProductosListaComponent implements OnInit {
 
 // Arreglo para almacenar la informacion que se obtenga de la base de datos de firebase
 ProductosLista: Productos[];
-
+buscar:string;
 constructor(
   private ProductosService: ProductosService,
   private toastr: ToastrService
@@ -38,8 +38,10 @@ constructor(
    Cuando ya se tiene el elemento se asigna a mi arreglo 'ProductosList' para ser mostrado en mi pantalla list
    this.ProductosList.push(x as Productos);
 */
-ngOnInit() {
-  return this.ProductosService.getProductos()
+consulProdu(){
+    
+
+  this.ProductosService.getProductos()
     .snapshotChanges().subscribe(item => {
       this.ProductosLista = [];
       item.forEach(element => {
@@ -47,9 +49,32 @@ ngOnInit() {
         x["idP"] = element.key;
         this.ProductosLista.push(x as Productos);
       });
+
+      this.ProductosLista = this.ProductosLista.filter(data => {
+        return data.nombre.toString().trim() === this.buscar;
+      })
+
+      if(this.ProductosLista.length === 0){
+        this.toastr.warning('Registro no encontrado', 'Advertencia');
+        this.mostrarRegistro();
+      }
     });
 }
+ngOnInit() {
+  this.mostrarRegistro();
+}
+mostrarRegistro(){
+  return this.ProductosService.getProductos()
+  .snapshotChanges().subscribe(item => {
+    this.ProductosLista = [];
+    item.forEach(element => {
+      let x = element.payload.toJSON();
+      x["idP"] = element.key;
+      this.ProductosLista.push(x as Productos);
+    });
+  });
 
+}
 /* 
  Recibe una varible de tipo 'Productos' para invocar el servicio de firebase, para actualizarlo
  Para no ocupar el doble enlace de datos ' [(ngModel)]' , se va utilizar 'Object.assign({}, Productos)'  

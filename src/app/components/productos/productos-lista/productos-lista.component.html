@@ -1,5 +1,9 @@
 <p>Lista Productos</p>
-
+<div class="btn-group">
+    <input type="text" class="form-control" placeholder="buscar por nombre" id="buscar" [(ngModel)]='buscar'>
+    <button class="btn btn-primary"  (click)="consulProdu();">Buscar</button>
+    <button class="btn btn-primary"  (click)="mostrarRegistro();">Recargar</button>
+</div> 
 <div class="card">
     <div class="card-body">
         <h6 class="text-center">
@@ -11,6 +15,7 @@
                 <td>Nombre</td> 
                 <td>Proveedor</td>
                 <td>Precio</td>
+                <td>cantidad</td>
                 <td>Fecha Vencimiento</td>
             </thead>
             <tbody>
@@ -19,6 +24,7 @@
                     <td>{{Productos.nombre}}</td>
                     <td>{{Productos.proveedor}}</td>
                     <td>{{Productos.precio}}</td>
+                    <td>{{Productos.cantidad}}</td>
                     <td>{{Productos.fechaVenci | date:'dd'}}/{{Productos.fechaVenci | date:'MM'}}/{{Productos.fechaVenci | date:'yyyy'}}</td>
                     <td>
                         <a class="btn btn-secondary text-white" (click)="onEdit(Productos)">

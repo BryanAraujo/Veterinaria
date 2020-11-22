@@ -1,5 +1,11 @@
 <p>Lista Clientes</p>
-
+<div class="btn-group">
+    <input type="text" class="form-control" placeholder="buscar por Propietario" id="buscar" [(ngModel)]='buscar'>
+    <button class="btn btn-primary"  (click)="consulClie();">Buscar</button>
+    <button class="btn btn-primary"  (click)="mostrarRegistro();">Recargar</button>
+</div>  
+<br>
+<br>
 <div class="card">
     <div class="card-body">
         <h6 class="text-center">

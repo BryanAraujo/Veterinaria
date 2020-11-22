@@ -16,7 +16,7 @@ export class PropietarioListaComponent implements OnInit {
 
  // Arreglo para almacenar la informacion que se obtenga de la base de datos de firebase
  PropietarioLista: Propietario[];
-
+buscar:string;
  constructor(
    private PropietarioService: PropietarioService,
    private toastr: ToastrService
@@ -38,18 +38,43 @@ export class PropietarioListaComponent implements OnInit {
     Cuando ya se tiene el elemento se asigna a mi arreglo 'PropietarioList' para ser mostrado en mi pantalla list
     this.PropietarioList.push(x as Propietario);
  */
- ngOnInit() {
-   return this.PropietarioService.getPropietarios()
-     .snapshotChanges().subscribe(item => {
-       this.PropietarioLista = [];
-       item.forEach(element => {
-         let x = element.payload.toJSON();
-         x["idP"] = element.key;
-         this.PropietarioLista.push(x as Propietario);
-       });
-     });
- }
+consulPropi(){
+    
 
+  this.PropietarioService.getPropietarios()
+    .snapshotChanges().subscribe(item => {
+      this.PropietarioLista = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["idP"] = element.key;
+        this.PropietarioLista.push(x as Propietario);
+      });
+
+      this.PropietarioLista = this.PropietarioLista.filter(data => {
+        return data.nombre.toString().trim() === this.buscar;
+      })
+
+      if(this.PropietarioLista.length === 0){
+        this.toastr.warning('Registro no encontrado', 'Advertencia');
+        this.mostrarRegistro();
+      }
+    });
+}
+ ngOnInit() {
+  this.mostrarRegistro();
+ }
+mostrarRegistro()
+{
+  return this.PropietarioService.getPropietarios()
+  .snapshotChanges().subscribe(item => {
+    this.PropietarioLista = [];
+    item.forEach(element => {
+      let x = element.payload.toJSON();
+      x["idP"] = element.key;
+      this.PropietarioLista.push(x as Propietario);
+    });
+  });
+}
  /* 
   Recibe una varible de tipo 'Propietario' para invocar el servicio de firebase, para actualizarlo
   Para no ocupar el doble enlace de datos ' [(ngModel)]' , se va utilizar 'Object.assign({}, Propietario)'  

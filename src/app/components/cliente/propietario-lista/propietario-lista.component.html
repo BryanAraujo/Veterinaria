@@ -1,5 +1,9 @@
 <p>Propietarios de mascotas</p>
-
+<div class="btn-group">
+    <input type="text" class="form-control" placeholder="buscar por Propietario" id="buscar" [(ngModel)]='buscar'>
+    <button class="btn btn-primary"  (click)="consulPropi();">Buscar</button>
+    <button class="btn btn-primary"  (click)="mostrarRegistro();">Recargar</button>
+</div> 
 <div class="card">
     <div class="card-body">
         <h6 class="text-center">
