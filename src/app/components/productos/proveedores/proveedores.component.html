@@ -1,1 +1,28 @@
-<p>proveedores works!</p>
+<p>Registro Proveedores</p>
+
+<div class="card mt-5">
+    <div class="card-body">
+
+        <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'proveedorForm' -->
+        <form #proveedorForm="ngForm" (ngSubmit)="onSubmit(proveedorForm)">
+
+            <!-- TO UPDATE -->
+            <input type="hidden" name="idPr" #idC="ngModel" [(ngModel)]="ProveServicio.selectedProveedor.idPr">
+
+            <div class="form-group">
+                <input type="text" class="form-control" name="nombre" #name="ngModel"
+                    [(ngModel)]="ProveServicio.selectedProveedor.nombre" placeholder="Nombre">
+            </div>
+
+
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-plus-circle"></i> Agregar Proveedor
+                </button>
+                <button class="btn btn-secondary" type="reset" (click)="reinicioForm(proveedorForm)">
+                    <i class="fas fa-sync-alt"></i> Reset
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

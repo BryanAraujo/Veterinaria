@@ -1,0 +1,29 @@
+<p>Proveedores de mascotas</p>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">
+            Lista de Proveedores
+        </h6>
+        <table class="table table-sm table-hover">
+            <thead>
+                <td>ID</td>
+                <td>Nombre</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Prove of ProveLista">
+                    <td>{{Prove.idPr}}</td>              
+                    <td>{{Prove.nombre}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(Prove)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(Prove.idPr)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

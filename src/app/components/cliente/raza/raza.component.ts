@@ -26,17 +26,22 @@ export class RazaComponent implements OnInit {
 
   // Recibe un formulario del tipo NgForm, lo envia a guardar o actualizar , invocando el servicio Firebase
   // lo termina limpiando resetForm
+  texto:string;
   onSubmit(RazaForm: NgForm) {
     if (RazaForm.value.idR == null)
+    {
       this.RazaService.insertarRaza(RazaForm.value);
-    else
+      this.texto="Raza Guardado";
+    }
+      else
     {
       this.RazaService.actulizarRaza(RazaForm.value);
+      this.texto="Raza actulizada";
     }
       
 
     this.resetForm(RazaForm);
-    this.toastr.success('Operacion exitosa', 'Raza Registrada');
+    this.toastr.success('Operacion exitosa', this.texto+"");
   }
 
   // Para limpiar el formulario

@@ -1,1 +1,35 @@
-<p>productos-lista works!</p>
+<p>Lista Productos</p>
+
+<div class="card">
+    <div class="card-body">
+        <h6 class="text-center">
+            Lista de Clientes
+        </h6>
+        <table class="table table-sm table-hover">
+            <thead>
+                <td>ID</td>
+                <td>Nombre</td> 
+                <td>Proveedor</td>
+                <td>Precio</td>
+                <td>Fecha Vencimiento</td>
+            </thead>
+            <tbody>
+                <tr *ngFor="let Productos of ProductosLista">
+                    <td>{{Productos.idP}}</td>              
+                    <td>{{Productos.nombre}}</td>
+                    <td>{{Productos.proveedor}}</td>
+                    <td>{{Productos.precio}}</td>
+                    <td>{{Productos.fechaVenci | date:'dd'}}/{{Productos.fechaVenci | date:'MM'}}/{{Productos.fechaVenci | date:'yyyy'}}</td>
+                    <td>
+                        <a class="btn btn-secondary text-white" (click)="onEdit(Productos)">
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(Productos.idP)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

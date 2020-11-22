@@ -27,18 +27,22 @@ export class PropietarioComponent implements OnInit {
 
   // Recibe un formulario del tipo NgForm, lo envia a guardar o actualizar , invocando el servicio Firebase
   // lo termina limpiando resetForm
+  texto:string;
   onSubmit(PropietarioForm: NgForm) {
     if (PropietarioForm.value.idP == null)
     {
-      this.PropietarioService.insertarPropietario(PropietarioForm.value);}
+      this.PropietarioService.insertarPropietario(PropietarioForm.value);
+      this.texto="Propietario Guardado";
+    }
     else
     {
       this.PropietarioService.actulizarPropietario(PropietarioForm.value);
+      this.texto="Propietario Actulizado";
     }
       
 
     this.resetForm(PropietarioForm);
-    this.toastr.success('Operacion exitosa', 'Propietario Registrada');
+    this.toastr.success('Operacion exitosa', this.texto+"");
   }
 
   // Para limpiar el formulario
