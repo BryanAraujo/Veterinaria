@@ -48,6 +48,7 @@ import { ComprasComponent } from './components/compras/compras.component';
 import { CitasComponent } from './components/citas/citas.component';
 import { CitasListasComponent } from './components/citas/citas-listas/citas-listas.component';
 import { CitaComponent } from './components/citas/cita/cita.component';
+import { PrincipalComponent } from './components/principal/principal.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { CitaComponent } from './components/citas/cita/cita.component';
     ComprasComponent,
     CitasComponent,
     CitasListasComponent,
-    CitaComponent
+    CitaComponent,
+    PrincipalComponent
 
   ],
   imports: [

@@ -1,0 +1,61 @@
+.logo-nombre{
+    font-family: 'Lemonada', cursive;
+    font-size: 1.8rem;
+}
+
+.todo{
+    width: 100%;
+    border-bottom: solid lightslategray 2px;
+}
+
+.fondo-paneles{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.img-logo{
+    width: 60%;
+    padding-top: 1rem;
+    border-radius: 1rem;
+}
+
+.todo{
+    width: 100%;
+    height: 100%;
+    border-color: lightslategray;
+}
+
+.borde-side{
+    border-right: solid lightslategray 2px;
+}
+
+.texto-side{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-left: 1rem;
+}
+
+.centrado{
+    display: flex;     
+    align-items: center;
+    justify-content: center;
+}
+.pie{
+    border-top: solid lightslategray 2px;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    text-align: center;
+    font-size: 0.95rem;
+    background-color: whitesmoke;
+}
+
+.piola{
+    height: 100%;
+    width: 100%;
+    padding-bottom: 1rem;
+    background-color: #e3f2fd;
+}
+
+.fondito{
+    background-image: url(https://i.pinimg.com/originals/18/3a/b4/183ab446e19f8b76c0ae8a2e2dd30dcf.jpg);
+
+}
