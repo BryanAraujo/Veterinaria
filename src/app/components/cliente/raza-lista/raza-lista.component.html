@@ -1,29 +1,30 @@
-<p>RAZAS de mascotas</p>
-
-<div class="card">
-    <div class="card-body">
-        <h6 class="text-center">
+<br><div class="card">
+    <div class="card-body colorsito">
+        <h6 class="text-center titulo-seccion">
             Lista de Raza
         </h6>
-        <table class="table table-sm table-hover">
-            <thead>
-                <td>ID</td>
-                <td>Nombre</td>
-            </thead>
-            <tbody>
-                <tr *ngFor="let Raza of RazaLista">
-                    <td>{{Raza.idR}}</td>              
-                    <td>{{Raza.nombre}}</td>
-                    <td>
-                        <a class="btn btn-secondary text-white" (click)="onEdit(Raza)">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger text-white" (click)="onDelete(Raza.idR)">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Raza of RazaLista" class="table-secondary">            
+                        <td>{{Raza.nombre}}</td>
+                        <td>
+                            <a class="btn btn-secondary text-white" (click)="onEdit(Raza)">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger text-white mx-3" (click)="onDelete(Raza.idR)">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

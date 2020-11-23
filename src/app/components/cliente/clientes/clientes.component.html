@@ -1,8 +1,8 @@
-<p>Registro cliente</p>
-
 <div class="card mt-5">
-    <div class="card-body">
-
+    <div class="card-body colorsito">
+        <h6 class="text-center titulo-seccion">
+            registro de mascotas clientes
+        </h6><br>
         <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'ClienteForm' -->
         <form #ClienteForm="ngForm" (ngSubmit)="onSubmit(ClienteForm)">
 
@@ -42,8 +42,8 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-plus-circle"></i> Agregar Cliente
                 </button>
-                <button class="btn btn-secondary" type="reset" (click)="reinicioForm(ClienteForm)">
-                    <i class="fas fa-sync-alt"></i> Reset
+                <button class="btn btn-secondary mx-3" type="reset" (click)="reinicioForm(ClienteForm)">
+                    <i class="fas fa-sync-alt"></i> Limpiar
                 </button>
             </div>
         </form>

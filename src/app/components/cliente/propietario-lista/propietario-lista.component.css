@@ -1,0 +1,13 @@
+.titulo-seccion{
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.colorsito{
+    background-color: bisque;
+}
+
+.letrita{
+    font-size: 0.7rem;
+}

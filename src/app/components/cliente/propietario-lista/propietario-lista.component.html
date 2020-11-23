@@ -1,41 +1,45 @@
-<p>Propietarios de mascotas</p>
-<div class="btn-group">
-    <input type="text" class="form-control" placeholder="buscar por Propietario" id="buscar" [(ngModel)]='buscar'>
-    <button class="btn btn-primary"  (click)="consulPropi();">Buscar</button>
-    <button class="btn btn-primary"  (click)="mostrarRegistro();">Recargar</button>
-</div> 
+<br>
 <div class="card">
-    <div class="card-body">
+    <div class="card-body colorsito">
         <h6 class="text-center">
             Lista de Propietarios
         </h6>
-        <table class="table table-sm table-hover">
-            <thead>
-                <td>ID</td>
-                <td>Nombre</td>
-                <td>Apellido</td>
-                <td>Dui </td>
-                <td>Telefono</td>
-                <td>Correo</td>
-            </thead>
-            <tbody>
-                <tr *ngFor="let Propietario of PropietarioLista">
-                    <td>{{Propietario.idP}}</td>              
-                    <td>{{Propietario.nombre}}</td>
-                    <td>{{Propietario.apellido}}</td>
-                    <td>{{Propietario.dui}}</td>
-                    <td>{{Propietario.tel}}</td>
-                    <td>{{Propietario.correo}}</td>
-                    <td>
-                        <a class="btn btn-secondary text-white" (click)="onEdit(Propietario)">
-                            <i class="far fa-edit"></i>
-                        </a>
-                        <a class="btn btn-danger text-white" (click)="onDelete(Propietario.idP)">
-                            <i class="fas fa-trash-alt"></i>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="btn-group">
+            <input type="text" class="form-control" placeholder="buscar por Propietario" id="buscar" [(ngModel)]='buscar'>
+            <button class="btn btn-primary"  (click)="consulPropi();">Buscar</button>
+            <button class="btn btn-primary mx-3"  (click)="mostrarRegistro();">Recargar</button>
+        </div><br><br>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">DUI</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Propietario of PropietarioLista" class="letrita table-secondary">       
+                        <td>{{Propietario.nombre}}</td>
+                        <td>{{Propietario.apellido}}</td>
+                        <td>{{Propietario.dui}}</td>
+                        <td>{{Propietario.tel}}</td>
+                        <td>{{Propietario.correo}}</td>
+                        <td>
+                            <a class="btn btn-secondary text-white" (click)="onEdit(Propietario)">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger text-white mx-3" (click)="onDelete(Propietario.idP)">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+<br>
