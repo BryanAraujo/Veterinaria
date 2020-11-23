@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,26 @@
     <title>Document</title>
 </head>
 <body>
+<script>
+    function fechaActual() {
+        var hoy = new Date();
+        var dd = hoy.getDate();
+        var mm = hoy.getMonth()+1;
+        var yyyy = hoy.getFullYear();
+        if(dd<10) {
+            dd='0'+dd;
+        } 
+        if(mm<10) {
+            mm='0'+mm;
+        } 
+        return yyyy+'-'+mm+'-'+dd;
+    }
+
+    document.getElementById("fechaCita").p = fechaActual();
+</script>
+<p>Registro Citas</p>
+
+
 <div class="card mt-5">
     <div class="card-body colorsito">
         <h6 class="text-center titulo-seccion">
@@ -26,8 +47,9 @@
               </div>
         
         <div class="form-group">
-            <input type="date" class="form-control" name="fechaCita" #location="ngModel"  
-                [(ngModel)]="CitasServicio.selectedCitas.fechaCita" placeholder="Fecha Cita">
+            <input type="date" class="form-control" name="fechaCita"  #location="ngModel"  
+                [(ngModel)]="CitasServicio.selectedCitas.fechaCita" placeholder="Fecha Cita" min="2020-11-23" max="2020-12-23">
+                <p id="fechaCita"></p>
         </div>
         <div class="form-group">
             
