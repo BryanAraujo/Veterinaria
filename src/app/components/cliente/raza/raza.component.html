@@ -1,7 +1,9 @@
 
 <div class="card mt-5">
-    <div class="card-body">
-
+    <div class="card-body colorsito">
+        <h6 class="text-center titulo-seccion">
+            Administración de razas
+        </h6>
         <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'RazaForm' -->
         <form #RazaForm="ngForm" (ngSubmit)="onSubmit(RazaForm)">
 
@@ -17,7 +19,7 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-plus-circle"></i> Agregar Raza
                 </button>
-                <button class="btn btn-secondary" type="reset" (click)="resetForm(RazaForm)">
+                <button class="btn btn-secondary mx-3" type="reset" (click)="resetForm(RazaForm)">
                     <i class="fas fa-sync-alt"></i> Reset
                 </button>
             </div>

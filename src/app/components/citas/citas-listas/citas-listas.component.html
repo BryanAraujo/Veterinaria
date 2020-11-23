@@ -1,21 +1,48 @@
-<p>Lista Citas</p>
-
+<br>
 <div class="card">
-    <div class="card-body">
-        <h6 class="text-center">
+    <div class="card-body colorsito">
+        <h6 class="text-center titulo-seccion">
             Lista de Citas
         </h6>
-        <table class="table table-sm table-hover">
-            <thead>
-                <td>ID</td>
+        <!-- Formato de tabla -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark text-center">
+                    <tr>
+                        <th scope="col">Paciente</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let Citas of CitasLista" class="table-secondary">          
+                        <td>{{Citas.paciente}}</td>
+                        <td>{{Citas.fechaCita | date:'dd'}}/{{Citas.fechaCita | date:'MM'}}/{{Citas.fechaCita | date:'yyyy'}}</td>
+                        <td>{{Citas.hora}}</td>
+                        <td>{{Citas.valor}}</td>
+                        <td>
+                            <a class="btn btn-secondary text-white" (click)="onEdit(Citas)">
+                                <i class="far fa-edit"></i>
+                            </a>
+                            <a class="btn btn-danger mx-sm-3 text-white" (click)="onDelete(Citas.idCi)">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--
+        <table class="table table-sm">
+            <thead class="thead-dark">
                 <td>Paciente</td> 
                 <td>Fecha</td>
                 <td>Hora</td>
                 <td>Valor</td>
             </thead>
             <tbody>
-                <tr *ngFor="let Citas of CitasLista">
-                    <td>{{Citas.idCi}}</td>              
+                <tr *ngFor="let Citas of CitasLista">          
                     <td>{{Citas.paciente}}</td>
                     <td>{{Citas.fechaCita | date:'dd'}}/{{Citas.fechaCita | date:'MM'}}/{{Citas.fechaCita | date:'yyyy'}}</td>
                     <td>{{Citas.hora}}</td>
@@ -30,6 +57,7 @@
                     </td>
                 </tr>
             </tbody>
-        </table>
+        </table>-->
     </div>
 </div>
+<br>

@@ -1,8 +1,8 @@
-<p>Registro Producto</p>
-
 <div class="card mt-5">
-    <div class="card-body">
-
+    <div class="card-body colorsito">
+        <h6 class="text-center titulo-seccion">
+            Registro de proveedores
+        </h6>
         <!-- Cuando el evento onSubmit , suceda se va pasar todo el formulario 'ProductoForm' -->
         <form #ProductoForm="ngForm" (ngSubmit)="onSubmit(ProductoForm)">
 
@@ -41,7 +41,7 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-plus-circle"></i> Agregar Producto
                 </button>
-                <button class="btn btn-secondary" type="reset" (click)="reinicioForm(ProductoForm)">
+                <button class="btn btn-secondary mx-3" type="reset" (click)="reinicioForm(ProductoForm)">
                     <i class="fas fa-sync-alt"></i> Reset
                 </button>
             </div>
