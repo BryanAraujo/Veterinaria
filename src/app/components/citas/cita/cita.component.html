@@ -29,7 +29,7 @@
             <div class="form-group">
             
                 <select class="form-control" name="paciente"  [(ngModel)]="CitasServicio.selectedCitas.paciente"required>
-                    <option value="">Seleccione</option>
+                    <option value="" [selected]="true">Seleccione</option>
                     <option *ngFor="let cliente of clienteLista" value="{{cliente.nombre}}" > {{cliente.nombre}}</option>
                   </select>
               </div>
@@ -79,3 +79,4 @@
     </div>
 </div>
 
+<app-citas-listas></app-citas-listas>
