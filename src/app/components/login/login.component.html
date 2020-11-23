@@ -33,13 +33,13 @@
                             <form>
                                 <div class="form-group">
                                   <label class="texto" for="exampleInputEmail1">Correo Electronico</label>
-                                  <input type="email" class="form-control" id="" aria-describedby="emailHelp">
+                                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp" #userName required>
                                 </div>
                                 <div class="form-group">
                                   <label class="texto" for="exampleInputPassword1">Contraseña</label>
-                                  <input type="password" class="form-control" id="">
+                                  <input type="password" class="form-control" id="contraseña" #userPassword required>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                <button type="submit" class="btn btn-primary" (click)="AuthService.SignIn(userName.value, userPassword.value)">Ingresar</button>
                             </form>
                         </div>
                         <div class="hijastra">
@@ -48,10 +48,10 @@
                                     <p class="texto">Tambien puedes ingresar con:</p>
                                 </div>
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-primary" (click)="authservice.FacebookAuth()">Facebook</button>
+                                    <button type="button" class="btn btn-primary" (click)="AuthService.FacebookAuth()">Facebook</button>
                                 </div>
                                 <div class="form-group">
-                                    <button type="button" class="btn btn-success" (click)="authservice.GoogleAuth()">Google+</button>
+                                    <button type="button" class="btn btn-success" (click)="AuthService.GoogleAuth()">Google+</button>
                                 </div>
                             </form>
                         </div>
@@ -80,7 +80,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="text" placeholder="Correo Electronico">
+                                <input class="form-control" type="text" placeholder="Correo Electronico" #userName2 required>
+                            </div>
+                            <div class="form-group">
+                              <input type="password" placeholder="Contraseña" class="form-control" id="contraseña" #userPassword2 required>
                             </div>
                             <div class="form-group mb-2">
                                 <input class="form-control" type="text" placeholder="Dirección">
@@ -93,7 +96,7 @@
                                     <input class="form-control" type="text" placeholder="Celular">
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-secondary btn-lg btn-block">Proceder al registo</button>
+                            <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="AuthService.SignUp(userName2.value, userPassword2.value)">Proceder al registo</button>
                       </form>
                     </div>
                   </div>
@@ -114,13 +117,13 @@
                       <form class="form-inline">
                         <div class="form-group mb-2">
                           <label for="staticEmail2" class="sr-only">Correo Electronico</label>
-                          <input type="text" readonly class="form-control-plaintext" id="" value="Correo Electronico:">
+                          <input type="text" readonly class="form-control-plaintext" id="" value="Correo Electronico:" #passwordResetEmail>
                         </div>
                         <div class="form-group mx-sm-3 mb-2">
                           <label for="inputPassword2" class="sr-only"></label>
                           <input type="password" class="form-control" id="" placeholder="">
                         </div>
-                        <button type="button" class="btn btn-outline-warning">Recuperar</button>
+                        <button type="button" class="btn btn-outline-warning" (click)="AuthService.ForgotPassword(passwordResetEmail.value)">Recuperar</button>
                       </form>
                     </div>>
                   </div>
